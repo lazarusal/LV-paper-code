@@ -87,10 +87,10 @@ function varargout=multiout(train_par,train_sim,gp_ker,...
       end
 
       A_inv=A\eye(size(A,1));
-      mul=H'*A\H;
-      
-      mull=H'*A_inv*D;
-      b_gls=mul\mull;
+      mul=H'*A_inv*H;
+      mul_inv=mul\eye(size(mul,1));
+      mul=H'*A_inv*D;
+      b_gls=mul_inv*mul;
       problem=createOptimProblem('fmincon','objective',@(x) opt_fun(x,test_point,...
       em_hyp,b_gls,H,gp_ker,data,A_inv),'x0',[1 1 1 1],'lb',[0.1 0.1 0.1 0.1],'ub', [5 5 5 5], 'nonlcon', @mycon);
       gs=GlobalSearch('NumTrialPoints',2000)
