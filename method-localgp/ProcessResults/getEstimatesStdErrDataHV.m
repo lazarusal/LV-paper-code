@@ -4,8 +4,8 @@ clc
 
 estimFcn = @hessToCovMat;
 
-logLoss = load('EmulationOutput_ObjectiveLogLoss_MethodGS_DataHao.mat');
-loss    = load('EmulationOutput_ObjectiveLoss_MethodGS_DataHao.mat');
+logLoss = load('EmulationOutput_ObjectiveLogLoss_MethodGS_DataHV.mat');
+loss    = load('EmulationOutput_ObjectiveLoss_MethodGS_DataHV.mat');
 
 xll = logLoss.res.x_best_euclid(1,:);
 xl  = loss.res.x_best_euclid(1,:);
@@ -29,9 +29,9 @@ for ID = [1] % the other IDs have been removed
         cov_mat = estimFcn(H);
     end
         
-    save(sprintf('hao_data_estimate_patient_%d.txt',    ID), 'x',       '-ascii')
-    save(sprintf('hao_data_hess_matrix_patient_%d.txt', ID), 'H',       '-ascii')
-    save(sprintf('hao_data_cov_matrix_patient_%d.txt',  ID), 'cov_mat', '-ascii')
+    save(sprintf('hv_data_estimate_patient_%d.txt',    ID), 'x',       '-ascii')
+    save(sprintf('hv_data_hess_matrix_patient_%d.txt', ID), 'H',       '-ascii')
+    save(sprintf('hv_data_cov_matrix_patient_%d.txt',  ID), 'cov_mat', '-ascii')
     
 end
 

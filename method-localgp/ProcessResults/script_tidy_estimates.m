@@ -7,7 +7,7 @@ clc
 
 %% Settings
 
-data   = 'Hao';
+data   = 'HV';
 method = 'EmulationOutput_CovLocal_ObjectiveLogLoss_DistanceMahal_MethodGS';
 
 save_name = [method '_' 'Data' data];
@@ -18,7 +18,7 @@ read_name = [save_name '_' 'Row'];
 
 % Size
 switch lower(data)
-    case 'hao'
+    case 'hv'
         n = 1;
     case 'test'
         n = 100;

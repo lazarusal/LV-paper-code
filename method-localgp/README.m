@@ -7,7 +7,7 @@
 startup;
 
 % 'test': data from test set
-% 'hao': data from healthy volunteer
+% 'hv': data from healthy volunteer
 data_label = 'test';
 
 % Create the right Results folder, see at the end of lv.run_emulation_*

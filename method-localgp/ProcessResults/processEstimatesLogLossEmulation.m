@@ -14,7 +14,7 @@ x_test_true = XTest4D.Variables;
 
 %% Estimation results
 
-data = stack_estimates_lv('estimates_hao_data_with_log_loss_emulator_sigma_', 9, 4);
+data = stack_estimates_lv('estimates_hv_data_with_log_loss_emulator_sigma_', 9, 4);
 test = stack_estimates_lv('estimates_test_data_with_log_loss_emulator_sigma_', 100, 4);
 
 %% Boxplot

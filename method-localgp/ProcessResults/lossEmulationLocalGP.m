@@ -10,7 +10,7 @@ rng default
 load('Simulations4D')
 
 % Settings
-which_data = 'test';  % hao or test
+which_data = 'test';  % hv or test
 id         = 7;
 
 log_data   = true;
@@ -31,9 +31,9 @@ switch which_data
         % Inferential data
         y_test = YTest4D.Variables;
         data   = y_test(id,:);
-    case 'hao'
-        % Use hao data
-        tmp  = load('hao_data');
+    case 'hv'
+        % Use hv data
+        tmp  = load('hv_data');
         data = tmp.data(id,:);
 end
 

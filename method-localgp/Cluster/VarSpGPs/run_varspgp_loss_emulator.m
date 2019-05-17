@@ -24,9 +24,9 @@ switch which_data
         % Inferential data
         y_test = YTest4D.Variables;
         data   = y_test(id,:);
-    case 'hao'
-        % Use hao data
-        tmp  = load('hao_data');
+    case 'hv'
+        % Use hv data
+        tmp  = load('hv_data');
         data = tmp.data(id,:);
 end
 

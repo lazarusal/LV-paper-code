@@ -28,9 +28,9 @@ switch which_data
         y_test = YTest4D.Variables;
         data   = y_test(id,:);
         x_test = XTest4D.Variables;
-    case 'hao'
-        % Use hao data
-        tmp  = load('hao_data');
+    case 'hv'
+        % Use hv data
+        tmp  = load('hv_data');
         data = tmp.data(id,:);
 end
 
