@@ -22,5 +22,5 @@ function [val]=hyp_posterior(sim,inputs, simulations,kernel,varargin)
   mulL=mat_chol(mul);
   DL=mat_chol(D'*G*D);
   %val=prior(sim)*det(A)^-(q/2)*det(mul)^-(q/2)*det(D'*G*D)^-((n-m)/2);
-  val=log(prior(sim))-q*sum(arrayfun(@log,diag(AL)))-q*sum(arrayfun(@log,diag(mulL)))-(n-m)*sum(arrayfun(@log,diag(DL)));
+  val=log(prior(sim))-q*sum(arrayfun(@log,diag(AL)))-q*sum(arrayfun(@log,diag(mulL)))-(n-m)*sum(arrayfun(@log,diag(DL)))+sum(exp(sim)); %including Jacobian correction
 end
